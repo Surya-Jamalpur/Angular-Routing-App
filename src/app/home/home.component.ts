@@ -12,7 +12,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-  onDynamicRoute(){
+  onDynamicRoute(id){
+    //dynamic routing
     this.router.navigate(['/servers']);
+    //passing query params and fragment dynamically
+    this.router.navigate(['/servers', id, 'edit'], {queryParams:{allowEdit:38}, fragment:'load'});
+
   }
 }
